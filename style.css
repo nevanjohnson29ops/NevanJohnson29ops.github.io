@@ -1,0 +1,32 @@
+html {
+    --text: #000000;
+--background: #dfdfdf;
+--primary: #00ccff;
+--secondary: #e3b34a;
+--accent: #b78ab7;
+}
+
+body {
+    color: var(--text);
+    background: var(--background);
+}
+p{
+    color: var(--secondary)
+} 
+
+image{
+   padding: 0%;
+    border:8px(-accent)
+}
+
+ul {
+    color: var(--secondary)
+}
+
+ol {
+    color: var(--secondary)
+}
+
+h3 {
+    color: var(--accent)
+}
