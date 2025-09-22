@@ -14,9 +14,11 @@ p{
     color: var(--secondary)
 } 
 
-image{
-   padding: 0%;
-    border:8px(-accent)
+img{
+   padding: 4px;
+    border:8px solid var: (--primary);
+    border: radius 16px;
+    backround: var: (--text);
 }
 
 ul {
