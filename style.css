@@ -1,34 +1,47 @@
 html {
     --text: #000000;
---background: #dfdfdf;
---primary: #00ccff;
---secondary: #e3b34a;
---accent: #b78ab7;
+    --background: #dfdfdf;
+    --primary: #00ccff;
+    --secondary: #e3b34a;
+    --accent: #b78ab7;
+}
+
+header {
+    color: var(--text);
+    font-weight: bold;
 }
 
 body {
     color: var(--text);
     background: var(--background);
 }
-p{
-    color: var(--secondary)
-} 
 
-img{
-   padding: 4px;
-    border:8px solid var: (--primary);
-    border: radius 16px;
-    backround: var: (--text);
+p {
+    color: var(--secondary);
+    font-weight: bold;
+    font-family: "Tinos";
+}
+
+img {
+    padding: 4px;
+    border: 8px solid var(--primary);
+    border-radius: 16px;
+    background: var(--text);
 }
 
 ul {
-    color: var(--secondary)
+    color: var(--secondary);
+    font-weight: bold;
+    font-size: large;
 }
 
 ol {
-    color: var(--secondary)
+    color: var(--secondary);
+    font-style: italic;
+    font-size: x-large;
 }
 
 h3 {
-    color: var(--accent)
+    color: var(--accent);
+    font-family: "Fugaz One";
 }
