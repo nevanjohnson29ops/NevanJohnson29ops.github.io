@@ -6,6 +6,10 @@ html {
     --accent: #b78ab7;
 }
 
+* {
+    border: 1px solid dodgerblue;
+}
+
 header {
     color: var(--text);
     font-weight: bold;
@@ -20,6 +24,7 @@ p {
     color: var(--secondary);
     font-weight: bold;
     font-family: "Tinos";
+
 }
 
 img {
@@ -44,4 +49,10 @@ ol {
 h3 {
     color: var(--accent);
     font-family: "Fugaz One";
+}
+
+audio {
+    border: 10px solid var(--primary);
+    padding: 15px;
+    border-radius: 40px;
 }
