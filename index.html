@@ -44,3 +44,86 @@
 		<img src="images (1).jpg" alt="Fabio Wimber">
 	</body>
 </html>
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Balloon Game</title>
+    <style>
+        /* Basic styling to center the balloon and ensure the body is scrollable */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+            margin: 0;
+            font-family: sans-serif;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        /* Initial style for the balloon container */
+        #balloon {
+            font-size: 50px; /* Initial size */
+            cursor: default; /* Indicate it's interactive */
+        }
+    </style>
+</head>
+<body>
+
+    <p id="balloon">🎈</p>
+
+    <script>
+        // 1. Get a reference to the balloon element
+        const balloonElement = document.getElementById('balloon');
+        // 2. Get the initial font size in pixels (e.g., '50px')
+        let size = parseInt(window.getComputedStyle(balloonElement).fontSize);
+        // Fallback if computed style isn't readily available or isn't a number
+        if (isNaN(size)) {
+            size = 50; 
+            balloonElement.style.fontSize = size + 'px';
+        }
+
+        // 3. Define the event handler function
+        function handleKey(event) {
+            // Prevent the default browser behavior for arrow keys (which is scrolling)
+            if (event.key === "ArrowUp" || event.key === "ArrowDown") {
+                event.preventDefault();
+            }
+
+            if (event.key === "ArrowUp") {
+                // Inflate: grow 10 percent
+                size *= 1.1; // 10% increase
+                
+            } else if (event.key === "ArrowDown") {
+                // Deflate: shrink 10 percent
+                size *= 0.9; // 10% decrease
+            } else {
+                // Ignore other keys
+                return;
+            }
+
+            // Update the balloon size
+            balloonElement.style.fontSize = size + 'px';
+
+            // Check for explosion condition
+            if (size > 200) { // Set an arbitrary explosion size (e.g., 200px)
+                // a. Replace the emoji
+                balloonElement.textContent = '💥'; 
+                // b. Remove the event handler (so it can't be inflated/deflated anymore)
+                document.removeEventListener('keydown', handleKey);
+                // Optional: Display a message
+                console.log("BOOM! The balloon has exploded.");
+            }
+        }
+
+        // 4. Attach the event listener to the entire document
+        // We use 'keydown' for continuous responsiveness while the key is held
+        document.addEventListener('keydown', handleKey);
+
+    </script>
+</body>
+</html>
