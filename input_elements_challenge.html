@@ -66,9 +66,9 @@
         <h2>Part 3: Checkbox and Radio Buttons</h2>
         <label><input type="checkbox" id="subscribeBox"> Subscribe to newsletter</label>
         <p>Pick a mode:</p>
-        <label><input type="radio" name="mode" value="Light"> Light</label>
-        <label><input type="radio" name="mode" value="Dark"> Dark</label>
-        <label><input type="radio" name="mode" value="System" checked> System</label>
+        <label><input type="radio" name="mode" id="lightMode" value="Light"> Light</label>
+        <label><input type="radio" name="mode" id="darkMode"value="Dark"> Dark</label>
+        <label><input type="radio" name="mode" id="systemMode"value="System" checked> System</label>
         <button id="btnSubmit">Submit</button>
         <div class="output" id="modeOutput"></div>
     </section>
@@ -95,7 +95,17 @@
         const colorInput = document.getElementById("colorInput");
         const volumeInput = document.getElementById("volumeInput");
         const colorOutput = document.getElementById("colorOutput");
-        colorOutput.textContent = "Test content. "      
+
+
+        function UpdateColorAndVolume(){
+        let color = colorInput.value;
+        let volume = volumeInput.value;
+        colorOutput.style.backgroundColor = color;
+        colorOutput.textContent = "color: " + color + " | volume: " + volume;
+        }
+        colorInput.addEventListener("input", UpdateColorAndVolume)
+        volumeInput.addEventListener("input", UpdateColorAndVolume)
+      
         // TODO: Update the background color of colorOutput whenever the color input changes.
         // Challenge: Also display the hex code and volume value dynamically.
 
