@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widget</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fugaz+One&family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <a href="index.html">Home Page</a>
+    <img id="canyon" src="image.webp" alt="canyon clicker" width="500" height="300">
+    <h3>Canyon Clicker</h3>
+    <p>Click the Image to Earn Points!</p>
+    <p>Points: <span id="points">0</span></p>
+    <button id="resetButton">Reset Points</button>
+    <script>
+        let points = 0;
+        const pointsDisplay = document.getElementById('points');
+        const resetButton = document.getElementById('resetButton');
+        const image = document.querySelector('img');
+   
+        image.addEventListener('click', () => {
+            points++;
+            pointsDisplay.textContent = points;
+        });
+
+        resetButton.addEventListener('click', () => {
+            points = 0;
+            pointsDisplay.textContent = points;
+        });    
+</script>
+<style>
+    p{
+    font-size: 35px;
+}
+    h3{
+    font-size: 40px;
+}
+    
+</style>
+</body>
+</html>

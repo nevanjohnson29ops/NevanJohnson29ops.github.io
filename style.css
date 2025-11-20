@@ -6,9 +6,6 @@ html {
     --accent: #b78ab7;
 }
 
-* {
-    border: 1px solid dodgerblue;
-}
 
 header {
     color: var(--text);
@@ -55,4 +52,9 @@ audio {
     border: 10px solid var(--primary);
     padding: 15px;
     border-radius: 40px;
+}
+
+image.webp {
+    width: 500px;
+    height: 300px;
 }
