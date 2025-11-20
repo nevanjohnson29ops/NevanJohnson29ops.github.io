@@ -21,30 +21,50 @@
     <p>Click the Image to Earn Points!</p>
     <p>Points: <span id="points">0</span></p>
     <button id="resetButton">Reset Points</button>
+    <button id="upgradeButton">Upgrade (Cost: 10 points)</button>
     <script>
+        let clickPoints = 1;
         let points = 0;
         const pointsDisplay = document.getElementById('points');
         const resetButton = document.getElementById('resetButton');
         const image = document.querySelector('img');
-   
+        const upgradeButton = document.createElement('button');
+        upgradeButton.id = 'upgradeButton';
+        upgradeButton.textContent = 'Upgrade (Cost: 10 points)';
+        document.body.appendChild(upgradeButton);
+
         image.addEventListener('click', () => {
-            points++;
+            points  += clickPoints;
             pointsDisplay.textContent = points;
+        });
+
+        upgradeButton.addEventListener('click', () => {
+            if (points >= 10) {
+                points -= 10;
+                pointsDisplay.textContent = points;
+                clickPoints = 5;
+                console.log('Upgraded! Each click now gives ' + clickPoints + ' points.');
+            } else {
+                alert('Not enough points for upgrade!');
+            }
         });
 
         resetButton.addEventListener('click', () => {
             points = 0;
             pointsDisplay.textContent = points;
-        });    
-</script>
-<style>
-    p{
-    font-size: 35px;
-}
-    h3{
-    font-size: 40px;
-}
-    
-</style>
+        });
+
+
+    </script>
+    <style>
+        p {
+            font-size: 35px;
+        }
+
+        h3 {
+            font-size: 40px;
+        }
+    </style>
 </body>
+<p>Reset the page to start the game again</p>
 </html>

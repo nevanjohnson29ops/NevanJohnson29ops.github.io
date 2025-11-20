@@ -6,7 +6,6 @@ html {
     --accent: #b78ab7;
 }
 
-
 header {
     color: var(--text);
     font-weight: bold;
