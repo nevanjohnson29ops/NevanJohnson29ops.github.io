@@ -46,7 +46,7 @@
                 console.log('Upgraded! Each click now gives ' + clickPoints + ' points.');
             } else {
                 alert('Not enough points for upgrade!');
-            }
+            
         });
 
         resetButton.addEventListener('click', () => {
@@ -65,6 +65,60 @@
             font-size: 40px;
         }
     </style>
+
+ <label>
+            Name:
+            <input id="nameInput" type="text" placeholder="Enter your name">
+        </label>
+        <label>
+            Age:
+            <input id="ageInput" type="number" min="0" max="120">
+        </label>
+        <button id="btnGreet">Greet Me</button>
+        <div class="output" id="greetingOutput"></div>
+
+     <script>
+        const nameInput = document.getElementById("nameInput");
+        const ageInput = document.getElementById("ageInput");
+        const btnGreet = document.getElementById("btnGreet");
+        const greetingOutput = document.getElementById("greetingOutput");
+
+        btnGreet.addEventListener("click", () => {
+            // TODO: Display a message like "Hello NAME, you are AGE years old!"
+            // Challenge: If age < 13, show "You're just a kid!" instead.
+            let name = nameInput.value;
+            let age = ageInput.value;
+            greetingOutput.textContent = "Hello " + name + ", you are " + age +" years old!";
+            if (age < 13) {
+                greetingOutput.textContent = "You're just a kid!";
+            }
+        })
+    </script>       
+     <label>
+            Favorite Color:
+            <input id="colorInput" type="color" value="#00AAFF">
+        </label>
+        <label>
+            Volume:
+            <input id="volumeInput" type="range" min="0" max="100" value="50">
+        </label>
+        <div class="output" id="colorOutput"></div>
+    
+    <script>
+    const colorInput = document.getElementById("colorInput");
+        const volumeInput = document.getElementById("volumeInput");
+        const colorOutput = document.getElementById("colorOutput");
+
+
+        function UpdateColorAndVolume(){
+        let color = colorInput.value;
+        let volume = volumeInput.value;
+        colorOutput.style.backgroundColor = color;
+        colorOutput.textContent = "color: " + color + " | volume: " + volume;
+        }
+        colorInput.addEventListener("input", UpdateColorAndVolume)
+        volumeInput.addEventListener("input", UpdateColorAndVolume)
+    <script/>
 </body>
 <p>Reset the page to start the game again</p>
 </html>
