@@ -16,6 +16,7 @@ body {
     background: var(--background);
 }
 
+
 p {
     color: var(--secondary);
     font-weight: bold;
@@ -53,7 +54,7 @@ audio {
     border-radius: 40px;
 }
 
-image.webp {
-    width: 500px;
-    height: 300px;
+.small {
+    width: 400px;
+    height: auto;
 }
