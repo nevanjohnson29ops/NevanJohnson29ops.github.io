@@ -16,39 +16,55 @@
 
 <body>
 
-	<h3><strong>Nevan Johnson</strong></h3>
-		<audio controls src="BeepBox-Song.wav"></audio>
+	<header class="topnav">
+		<div class="brand">
+			<h3><strong>Nevan Johnson</strong></h3>
+			<audio controls src="BeepBox-Song.wav"></audio>
+		</div>
+		<nav class="top-links">
+			<a href="aboutme.html">About Me</a>
+			<a href="widget.html">Clicker</a>
+			<a href="blackjack.html">Blackjack</a>
+		</nav>
+	</header>
 
+	<h3>My Family</h3>
+	<ul>
+		<li>Me</li>
+		<li>My parents</li>
+		<li>My Brother</li>
+		<li>My Dog</li>
+	</ul>
 
-		 <h3><a href="aboutme.html">About Me</a></h3>
+	<h3>Mountain Biking</h3>
 
-		<h3><a href="widget.html">Clicker</a></h3>
+	<p>Why Mountain biking is the best. Mountain biking is fun fast and rewarding.<br> There are also really fun trails.
+		When
+		u are going downhill it feels like <br> you are flying.</p>
+	<h3><a href="mtb.html">More Mountain Bike Info</a> </h3>
 
-		 <h3><a href="blackjack.html">Blackjack</a></h3>
+	<h3>Mountian Bike Riders</h3>
+	<ul>
+		<li>Red Bull Sponsered Jackson Goldstone</li>
+	</ul>
+	<img id="spin-image" class="spin-target" src="images.jpg" alt="Jackson winning a world cup downhill race">
 
-		<h3>My Family</h3>
-		<ul>
-			<li>Me</li>
-			<li>My parents</li>
-			<li>My Brother</li>
-			<li>My Dog</li>
-		</ul>
+	<ul>
+		<li> Fabio Wimber</li>
+	</ul>
+	<img class="spin-target" src="images(1).jpg" alt="Fabio Wimber">
 
-		<h3>Mountain Biking</h3>
-		
-		<p>Why Mountain biking is the best. Mountain biking is fun fast and rewarding.<br> There are also really fun trails. When
-			u are going downhill it feels like <br> you are flying.</p>
-			<h3><a href="mtb.html">More Mountain Bike Info</a> </h3>
-		
-		<h3>Mountian Bike Riders</h3>
-		<ul>
-			<li>Red Bull Sponsered Jackson Goldstone</li>
-		</ul>
-		<img src="images.jpg" alt="Jackson winning a world cup downhill race">
-		
-		<ul>
-			<li> Fabio Wimber</li>
-		</ul>
-		<img src="images(1).jpg" alt="Fabio Wimber">
-	</body>
+	<script>
+		const spinTargets = document.querySelectorAll('.spin-target');
+		spinTargets.forEach((img) => {
+			img.style.cursor = 'pointer';
+			img.addEventListener('click', () => {
+				img.classList.remove('spin');
+				void img.offsetWidth;
+				img.classList.add('spin');
+			});
+		});
+	</script>
+</body>
+
 </html>
