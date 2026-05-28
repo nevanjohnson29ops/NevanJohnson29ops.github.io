@@ -27,6 +27,17 @@
         </section>
 
         <section class="controls">
+            <div class="money-section">
+                <div class="money-display">
+                    <div>Money: <span id="money">150</span></div>
+                    <div>Bet: <span id="current-bet">0</span></div>
+                </div>
+                <div class="bet-input" id="bet-section" style="display: none;">
+                    <label for="bet-amount">Enter bet amount:</label>
+                    <input type="number" id="bet-amount" min="1" max="150" value="10" />
+                    <button id="place-bet">Place Bet</button>
+                </div>
+            </div>
             <div class="buttons">
                 <button id="deal">Deal</button>
                 <button id="hit" disabled>Hit</button>
@@ -40,7 +51,7 @@
             <div>Losses: <span id="losses">0</span></div>
             <div>Pushes: <span id="pushes">0</span></div>
         </footer>
-         <h3><a href="index.html">Home Page</a></h3>
+        <h3><a href="index.html">Home Page</a></h3>
     </main>
 
     <script src="blackjack.js"></script>

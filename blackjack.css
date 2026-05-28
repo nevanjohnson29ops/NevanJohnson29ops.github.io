@@ -90,7 +90,65 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 12px
+    margin-top: 12px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.money-section {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.money-display {
+    display: flex;
+    gap: 16px;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.bet-input {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.bet-input label {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.bet-input input {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 2px solid var(--accent);
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--card);
+    font-weight: 700;
+    width: 80px;
+    text-align: center;
+}
+
+.bet-input input:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 209, 102, 0.5);
+}
+
+.bet-input button {
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 0;
+    background: var(--accent);
+    color: #111;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.bet-input button:hover {
+    opacity: 0.9;
 }
 
 .buttons button {
