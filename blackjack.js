@@ -93,7 +93,7 @@
 
 		const pScore = scoreHand(player);
 		if (pScore === 21) {
-			message.textContent = 'Blackjack! You win! +$' + currentBet; stats.wins++;
+			message.textContent = 'Blackjack! You win +$' + currentBet; stats.wins++;
 			money += currentBet;
 			endRound();
 		}
@@ -120,7 +120,7 @@
 		render();
 		const s = scoreHand(player);
 		if (s > 21) {
-			message.textContent = 'Bust — You lose';
+			message.textContent = 'You lose -$' + currentBet;
 			stats.losses++;
 			endRound();
 		}
@@ -138,18 +138,18 @@
 		const d = scoreHand(dealer);
 		render();
 		if (p > 21) {
-			message.textContent = `You busted (${p}). Dealer wins (${d}). -$${currentBet}`;
+			message.textContent = `You lose -$${currentBet}`;
 			money = Math.max(0, money - currentBet);
 		} else if (d > 21) {
-			message.textContent = `Dealer busted (${d}). You win! +$${currentBet}`;
+			message.textContent = `You win +$${currentBet}`;
 			money += currentBet;
 			stats.wins++;
 		} else if (p > d) {
-			message.textContent = `You win! ${p} vs ${d}. +$${currentBet}`;
+			message.textContent = `You win +$${currentBet}`;
 			money += currentBet;
 			stats.wins++;
 		} else if (p < d) {
-			message.textContent = `Dealer wins ${d} vs ${p}. -$${currentBet}`;
+			message.textContent = `You lose -$${currentBet}`;
 			money = Math.max(0, money - currentBet);
 			stats.losses++;
 		} else {
