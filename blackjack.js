@@ -101,6 +101,12 @@
 
 	function showBetting() {
 		currentBet = 0;
+		if (money <= 0) {
+			betSection.style.display = 'none';
+			dealBtn.disabled = true;
+			message.textContent = 'Game Over! You are out of money. Refresh to play again.';
+			return;
+		}
 		betSection.style.display = 'block';
 		betAmountInput.max = money;
 		betAmountInput.value = Math.min(10, money);
@@ -133,7 +139,7 @@
 		render();
 		if (p > 21) {
 			message.textContent = `You busted (${p}). Dealer wins (${d}). -$${currentBet}`;
-			money -= currentBet;
+			money = Math.max(0, money - currentBet);
 		} else if (d > 21) {
 			message.textContent = `Dealer busted (${d}). You win! +$${currentBet}`;
 			money += currentBet;
@@ -144,7 +150,7 @@
 			stats.wins++;
 		} else if (p < d) {
 			message.textContent = `Dealer wins ${d} vs ${p}. -$${currentBet}`;
-			money -= currentBet;
+			money = Math.max(0, money - currentBet);
 			stats.losses++;
 		} else {
 			message.textContent = `Push: ${p} — it's a tie. Bet returned`;
