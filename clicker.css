@@ -66,12 +66,52 @@ h1 {
 }
 
 /* graphics and animations */
-.cookie-btn{position:relative;overflow:visible}
-.cookie-btn.glow{animation:glowPulse 650ms ease-out}
-@keyframes glowPulse{0%{box-shadow:0 6px 12px rgba(0,0,0,0.08)}50%{box-shadow:0 12px 36px rgba(209,154,102,0.4);transform:scale(1.04)}100%{box-shadow:0 6px 12px rgba(0,0,0,0.08);transform:scale(1)}}
+.cookie-btn {
+    position: relative;
+    overflow: visible
+}
 
-.floating{position:fixed;pointer-events:none;font-weight:700;color:#b45d2f;text-shadow:0 1px 0 #fff;transform:translateY(0);animation:floatUp 900ms ease-out forwards}
-@keyframes floatUp{0%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-60px) scale(1.1)}}
+.cookie-btn.glow {
+    animation: glowPulse 650ms ease-out
+}
+
+@keyframes glowPulse {
+    0% {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08)
+    }
+
+    50% {
+        box-shadow: 0 12px 36px rgba(209, 154, 102, 0.4);
+        transform: scale(1.04)
+    }
+
+    100% {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+        transform: scale(1)
+    }
+}
+
+.floating {
+    position: fixed;
+    pointer-events: none;
+    font-weight: 700;
+    color: #b45d2f;
+    text-shadow: 0 1px 0 #fff;
+    transform: translateY(0);
+    animation: floatUp 900ms ease-out forwards
+}
+
+@keyframes floatUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1)
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(-60px) scale(1.1)
+    }
+}
 
 .controls {
     margin: 12px 0

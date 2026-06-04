@@ -93,14 +93,14 @@ function flash(msg) {
     setTimeout(() => $('saveIndicator').textContent = old, 1200);
 }
 
-function animateClick(x, y, amount){
+function animateClick(x, y, amount) {
     const el = document.createElement('div');
     el.className = 'floating';
     el.textContent = `+${format(amount)}`;
     document.body.appendChild(el);
     el.style.left = (x - 10) + 'px';
     el.style.top = (y - 10) + 'px';
-    setTimeout(()=> el.remove(), 900);
+    setTimeout(() => el.remove(), 900);
 }
 
 function clickCookie(e) {
@@ -108,13 +108,13 @@ function clickCookie(e) {
     updateStats();
     // animate
     const rect = $('cookie').getBoundingClientRect();
-    const x = e ? e.clientX : rect.left + rect.width/2;
-    const y = e ? e.clientY : rect.top + rect.height/2;
+    const x = e ? e.clientX : rect.left + rect.width / 2;
+    const y = e ? e.clientY : rect.top + rect.height / 2;
     animateClick(x, y, state.cpc);
     // glow effect
     const btn = $('cookie');
     btn.classList.add('glow');
-    setTimeout(()=> btn.classList.remove('glow'), 650);
+    setTimeout(() => btn.classList.remove('glow'), 650);
 }
 
 function upgradeClick() {
