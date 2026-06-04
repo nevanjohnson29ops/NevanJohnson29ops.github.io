@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Clicker Game</title>
+    <link rel="stylesheet" href="clicker.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Clicker Game</h1>
+        <div class="stats">
+            <div id="cookies" class="big">0</div>
+            <div class="label">Cookies</div>
+            <div id="cps">0</div>
+            <div class="label">Cookies / sec</div>
+        </div>
+
+        <button id="cookie" class="cookie-btn">🍪</button>
+
+        <div class="controls">
+            <div class="upgrade">
+                <button id="upgradeClick">Upgrade Click (+1)</button>
+                <div id="cpcDisplay">Click power: 1</div>
+            </div>
+        </div>
+
+        <h2>Shop</h2>
+        <div id="shop" class="shop"></div>
+
+        <div class="footer">
+            <button id="reset">Reset</button>
+            <div id="saveIndicator">Auto-saved</div>
+        </div>
+    </div>
+
+    <script src="clicker.js"></script>
+</body>
+
+</html>
